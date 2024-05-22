@@ -25,7 +25,7 @@ stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 %% System parameters
 
 % transport from supply
-aSupplyTransport = 6.78*10^-5; % Dissipation coefficient
+aSupplyTransport = 0.0000678; % Dissipation coefficient
 
 % injection system
 aInjection = 0.1; % Dissipation coefficient
