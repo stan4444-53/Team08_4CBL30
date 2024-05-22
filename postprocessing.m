@@ -6,44 +6,44 @@ figure;
 
 %% Supply and demand
 subplot(2,2,1);
-plot(tout/unit("day"), PSupply/unit("W"));
+plot(tout/unit("day"), PSupply/unit("MW"));
 hold on;
-plot(tout/unit("day"), PDemand/unit("W"));
+plot(tout/unit("day"), PDemand/unit("MW"));
 xlim([0 tout(end)/unit("day")]);
 grid on;
 title('Supply and demand');
 xlabel('Time [day]');
-ylabel('Power [W]');
+ylabel('Power [MW]');
 legend("Supply","Demand");
 
 %% Stored energy
 subplot(2,2,2);
-plot(tout/unit("day"), EStorage/unit("J"));
+plot(tout/unit("day"), EStorage/unit("MJ"));
 xlim([0 tout(end)/unit("day")]);
 grid on;
 title('Storage');
 xlabel('Time [day]');
-ylabel('Energy [J]');
+ylabel('Energy [MJ]');
 
 %% Energy losses
 subplot(2,2,3);
-plot(tout/unit("day"), D/unit("W"));
+plot(tout/unit("day"), D/unit("MW"));
 xlim([0 tout(end)/unit("day")]);
 grid on;
 title('Losses');
 xlabel('Time [day]');
-ylabel('Dissipation rate [W]');
+ylabel('Dissipation rate [MW]');
 
 %% Load balancing
 subplot(2,2,4);
-plot(tout/unit("day"), PSell/unit("W"));
+plot(tout/unit("day"), PSell/unit("MW"));
 hold on;
-plot(tout/unit("day"), PBuy/unit("W"));
+plot(tout/unit("day"), PBuy/unit("MW"));
 xlim([0 tout(end)/unit("day")]);
 grid on;
 title('Load balancing');
 xlabel('Time [day]');
-ylabel('Power [W]');
+ylabel('Power [MW]');
 legend("Sell","Buy");
 
 %% Pie charts
@@ -64,12 +64,12 @@ tiles = tiledlayout(1,2);
 
 ax = nexttile;
 pie(ax, [EDirect, EtoInjection, ESell]/EfromSupplyTransport);
-lgd = legend({"Direct to demand", "To storage", "Sold"});
+lgd = legend(["Direct to demand", "To storage", "Sold"]);
 lgd.Layout.Tile = "south";
 title(sprintf("Received energy %3.2e [J]", EfromSupplyTransport/unit('J')));
 
 ax = nexttile;
 pie(ax, [EDirect, EfromExtraction, EBuy]/EtoDemandTransport);
-lgd = legend({"Direct from supply", "From storage", "Bought"});
+lgd = legend(["Direct from supply", "From storage", "Bought"]);
 lgd.Layout.Tile = "south";
 title(sprintf("Delivered energy %3.2e [J]", EtoDemandTransport/unit('J')));

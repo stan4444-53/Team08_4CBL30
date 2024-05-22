@@ -5,14 +5,14 @@
 
 timeUnit   = 's';
 
-supplyFile = "SolarExample_supply.csv";
-supplyUnit = "kW";
+supplyFile = "Team08_supply.csv";
+supplyUnit = "MW";
 
 % load the supply data
 Supply = loadSupplyData(supplyFile, timeUnit, supplyUnit);
 
-demandFile = "SolarExample_demand.csv";
-demandUnit = "kW";
+demandFile = "Team08_demand.csv";
+demandUnit = "MW";
 
 % load the demand data
 Demand = loadDemandData(demandFile, timeUnit, demandUnit);
@@ -25,15 +25,15 @@ stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 %% System parameters
 
 % transport from supply
-aSupplyTransport = 0.01; % Dissipation coefficient
+aSupplyTransport = 6.78*10^-5; % Dissipation coefficient
 
 % injection system
 aInjection = 0.1; % Dissipation coefficient
-
+    	
 % storage system
-EStorageMax     = 10.*unit("kWh"); % Maximum energy
-EStorageMin     = 0.0*unit("kWh"); % Minimum energy
-EStorageInitial = 2.0*unit("kWh"); % Initial energy
+EStorageMax     = 10.*unit("MWh"); % Maximum energy
+EStorageMin     = 0.0*unit("MWh"); % Minimum energy
+EStorageInitial = 2.0*unit("MWh"); % Initial energy
 bStorage        = 1e-6/unit("s");  % Storage dissipation coefficient
 
 % extraction system
