@@ -40,4 +40,4 @@ bStorage        = 1e-6/unit("s");  % Storage dissipation coefficient
 aExtraction = 0.1; % Dissipation coefficient
 
 % transport to demand
-aDemandTransport = 0.01; % Dissipation coefficient
+aDemandTransport = 0.0001; % Dissipation coefficient
