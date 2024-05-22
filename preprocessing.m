@@ -31,9 +31,9 @@ aSupplyTransport = 0.0000678; % Dissipation coefficient
 aInjection = 0.1; % Dissipation coefficient
     	
 % storage system
-EStorageMax     = 10.*unit("MWh"); % Maximum energy
-EStorageMin     = 0.0*unit("MWh"); % Minimum energy
-EStorageInitial = 2.0*unit("MWh"); % Initial energy
+EStorageMax     = 5.8*unit("GWh"); % Maximum energy
+EStorageMin     = 5.8*0.35*unit("GWh"); % Minimum energy
+EStorageInitial = 0*unit("MWh"); % Initial energy
 bStorage        = 1e-6/unit("s");  % Storage dissipation coefficient
 
 % extraction system
