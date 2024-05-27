@@ -23,6 +23,20 @@ deltat = 5*unit("min");
 stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 
 %% System parameters
+%transportation
+
+%Reservoir
+Volume = 
+Surface_area = 
+Height = 291*unit("m");
+
+%Pipes
+Diameter = 4*unit("m");
+
+%Turbine
+
+
+%Pump
 
 
 % transport from supply
