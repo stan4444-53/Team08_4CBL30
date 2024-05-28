@@ -51,4 +51,3 @@ distanceDemandEST = 37; % distance in km form EST to luxemburg city for transpor
 resistanceOverDist = 0.035; % resistance over distance in ohm/km
 nCables = 1; % Maximum current divided by maximum allowed currents thourgh cable
 demandTransportResistance = 1/(1/(resistanceOverDist*distanceSupplyEST)*nCables); % Calculation of the resistance
-voltageTransport = 765000; % voltage through cables
