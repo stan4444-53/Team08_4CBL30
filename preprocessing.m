@@ -23,30 +23,33 @@ deltat = 5*unit("min");
 stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 
 %% System parameters
-%transportation
 
-%Reservoir
-Volume = 
-Surface_area = 
-Height = 291*unit("m");
-
-%Pipes
-Diameter = 4*unit("m");
-
-%Turbine
-
-
-%Pump
-
-%Parameters
+%Changeable Parameters
 D = 4; %Diameter (m)
-g = 9.81; %gravitation (m/s^2)
 h = 291; %height (m)
+H = 40; %head of the pump
 f = 0.0021; %friction factor
 L = 291; %length (m)
+C_v = 0.98; %jet coef
+P_tot= 87425136; %Power that the pumps need to generate
+Q = 30; %flow
+Q_pump = 20; %flow of the pump
+eta = 0.94; %efficiency of a pump
+k = 0.0003; %pipe roughness value of ordinsary concrete (range is 0.0003-0.001)
+n_1 = 8; %numbers of pumps chosen in series
+n_2 = 10; %numbers of pumps chosen in parallel.
+
+%parameters
+rho = 998; %Density
+g = 9.81; %gravitation (m/s^2)
+pi= 3.14;
+mu = (0.00089); %dynamic viscosity of water
 K = 0; %constant for pressure loss because of a 90 degree bend in the pipe
- %V= 4*unit("m^.3"); %Volume of the reservoir
+
+
+%V= 4*unit("m^.3"); %Volume of the reservoir
 %v = sqrt((2*g*h)/(1-K-((f*L)/(2*D)))); %velocity at the end of the pipe (m/s)
+
 
 
 % transport from supply
