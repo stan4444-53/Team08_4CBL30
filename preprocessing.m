@@ -24,6 +24,7 @@ stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 
 %% System parameters
 
+
 % transport from supply
 etaTransformer = 0.99; % Transformer efficiency
 distanceSupplyEST = 16; % distance in km form EST to windmillpark
@@ -32,19 +33,19 @@ nCables = 2; % Maximum current divided by maximum allowed currents thourgh cable
 supplyTransportResistance = 1/(1/(resistanceOverDist*distanceSupplyEST)*nCables); % Calculation of the resistance
 voltageTransport = 765000; % voltage through cables
 
-
-
 % injection system
-aInjection = 0.1; % Dissipation coefficient
+aInjection = 0.273; % Dissipation coefficient
+
     	
 % storage system
-EStorageMax     = 5.8*unit("GWh"); % Maximum energy
-EStorageMin     = 5.8*0.35*unit("GWh"); % Minimum energy
-EStorageInitial = 5.8*0.35*unit("GWh"); % Initial energy
-bStorage        = 1e-6/unit("s");  % Storage dissipation coefficient
+EStorageMax     = 5800.*unit("MWh"); % Maximum energy
+EStorageMin     = 2030*unit("MWh"); % Minimum energy
+EStorageInitial = 2030*unit("MWh"); % Initial energy
+bStorage        = 1.91e-7/unit("s");  % Storage dissipation coefficient
+% gStorage        = 2.14e-7/unit("s"); %Storage gain coefficient
 
 % extraction system
-aExtraction = 0.1; % Dissipation coefficient
+aExtraction = 0.388; % Dissipation coefficient
 
 % transport to demand
 distanceDemandEST = 37; % distance in km form EST to luxemburg city for transportation supplier
