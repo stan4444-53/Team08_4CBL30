@@ -32,7 +32,7 @@ f = 0.0021; %friction factor
 L = 291; %length (m)
 K = 0; %constant for pressure loss because of a 90 degree bend in the pipe
  %V= 4*unit("m^.3"); %Volume of the reservoir
-v = sqrt((2*g*h)/(1-K-((f*L)/(2*D)))); %velocity at the end of the pipe (m/s)
+%v = sqrt((2*g*h)/(1-K-((f*L)/(2*D)))); %velocity at the end of the pipe (m/s)
 
 
 % transport from supply
@@ -45,9 +45,9 @@ voltageTransport = 765000; % voltage through cables
 
 % injection system
 %pump_efficiency= 0000; 
-friction = (g*h)/((1/2)*v^2); %efficiency of the pipes
+%friction = (g*h)/((1/2)*v^2); %efficiency of the pipes
 %aInjection = friction * pump_efficiency; % Dissipation coefficient
-aInjection = friction; % Dissipation coefficient
+%aInjection = ; % Dissipation coefficient
 
     	
 % storage system
