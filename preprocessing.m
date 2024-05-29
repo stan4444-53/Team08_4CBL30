@@ -24,6 +24,16 @@ stopt  = min([Supply.Timeinfo.End, Demand.Timeinfo.End]);
 
 %% System parameters
 
+%Parameters
+D = 4; %Diameter (m)
+g = 9.81; %gravitation (m/s^2)
+h = 291; %height (m)
+f = 0.0021; %friction factor
+L = 291; %length (m)
+K = 0; %constant for pressure loss because of a 90 degree bend in the pipe
+ %V= 4*unit("m^.3"); %Volume of the reservoir
+v = sqrt((2*g*h)/(1-K-((f*L)/(2*D)))); %velocity at the end of the pipe (m/s)
+
 
 % transport from supply
 etaTransformer = 0.99; % Transformer efficiency
@@ -34,7 +44,10 @@ supplyTransportResistance = 1/(1/(resistanceOverDist*distanceSupplyEST)*nCables)
 voltageTransport = 765000; % voltage through cables
 
 % injection system
-aInjection = 0.273; % Dissipation coefficient
+  %pump_efficiency= 0000; 
+friction = (g*h)/((1/2)*v^2); %efficiency of the pipes
+%aInjection = friction * pump_efficiency; % Dissipation coefficient
+aInjection = friction; % Dissipation coefficient
 
     	
 % storage system
@@ -52,3 +65,5 @@ distanceDemandEST = 37; % distance in km form EST to luxemburg city for transpor
 resistanceOverDist = 0.035; % resistance over distance in ohm/km
 nCables = 1; % Maximum current divided by maximum allowed currents thourgh cable
 demandTransportResistance = 1/(1/(resistanceOverDist*distanceSupplyEST)*nCables); % Calculation of the resistance
+
+
