@@ -44,7 +44,7 @@ supplyTransportResistance = 1/(1/(resistanceOverDist*distanceSupplyEST)*nCables)
 voltageTransport = 765000; % voltage through cables
 
 % injection system
-  %pump_efficiency= 0000; 
+%pump_efficiency= 0000; 
 friction = (g*h)/((1/2)*v^2); %efficiency of the pipes
 %aInjection = friction * pump_efficiency; % Dissipation coefficient
 aInjection = friction; % Dissipation coefficient
